@@ -7,11 +7,29 @@ use App\Http\Controllers\ComputerController;
 use App\Http\Controllers\TrainingCentersController;
 use App\Http\Controllers\TeacherController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\ApprenticesController;
+use App\Http\Controllers\ApprenticeController;
 
-Route::get('/areas', [AreaController::class, 'index']);
-Route::get('/computers', [ComputerController::class, 'index']);
-Route::get('/trainingCenters', [TrainingCentersController::class, 'index']);
-Route::get('/teachers', [TeacherController::class, 'index']);
-Route::get('/courses', [CourseController::class, 'index']);
-Route::get('/apprentices', [ApprenticesController::class, 'index']);
+
+Route::apiResource('apprentices', ApprenticeController::class);
+
+Route::apiResource('courses', CourseController::class);
+
+Route::apiResource('teachers', TeacherController::class);
+
+//Training Centers
+Route::get('trainingCenters', [TrainingCentersController::class, 'index']);
+Route::post('trainingCenters', [TrainingCentersController::class, 'store']);
+Route::get('trainingCenters/{id}', [TrainingCentersController::class, 'show']);
+Route::put('trainingCenters/{id}', [TrainingCentersController::class, 'update']);
+Route::delete('trainingCenters/{id}', [TrainingCentersController::class, 'destroy']);
+
+
+Route::apiResource('computers', ComputerController::class);
+
+//area
+Route::get('areas', [AreaController::class, 'index']);
+Route::post('areas', [AreaController::class, 'store']);
+Route::get('areas/{id}', [AreaController::class, 'show']);
+Route::put('areas/{id}', [AreaController::class, 'update']);
+Route::delete('areas/{id}', [AreaController::class, 'destroy']);
+
