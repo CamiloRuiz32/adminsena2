@@ -24,7 +24,13 @@ Route::put('trainingCenters/{id}', [TrainingCentersController::class, 'update'])
 Route::delete('trainingCenters/{id}', [TrainingCentersController::class, 'destroy']);
 
 
-Route::apiResource('computers', ComputerController::class);
+//computers
+Route::get('computers', [ComputerController::class, 'index']);
+Route::post('computers', [ComputerController::class, 'store']);
+Route::get('computers/{id}', [ComputerController::class, 'show']);
+Route::put('computers/{id}', [ComputerController::class, 'update']);
+Route::delete('computers/{id}', [ComputerController::class, 'destroy']);
+
 
 //area
 Route::get('areas', [AreaController::class, 'index']);
