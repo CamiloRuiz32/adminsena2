@@ -2,31 +2,35 @@
 
 @section('content')
 
-<h1>Formulario de Computadores</h1>
+    <h1>Formulario de Computadores</h1>
 
-<form action="{{route('computers.store')}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('computers.store')}}" method="POST" enctype="multipart/form-data">
 
-@csrf
+        @csrf
 
-<label>
-    Numero:
-    <br>
-    <input type="number" name="number">
-</label>
-<br>
+        <label>
+            Numero:
+            <br>
+            <input type="number" name="number">
+        </label>
+        <br>
 
 
-<label>
-    Marca:
-    <br>
-    <input type="text" name="brand">
-</label>
-<br>
+        <label>
+            Marca:
+            <br>
+            <input type="text" name="brand">
+        </label>
+        <br>
 
-<br>
-<br>
+        <br>
+        <br>
 
-<button type="submit">Crear:</button>
-</form>
+        <button type="submit">Crear:</button>
+    </form>
 
 @endsection
+
+
+
+

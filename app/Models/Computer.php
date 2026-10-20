@@ -9,5 +9,5 @@ class Computer extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['brand', 'model', 'serial_number'];
+    protected $fillable = ['number', 'brand'];
 }
